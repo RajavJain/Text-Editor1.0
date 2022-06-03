@@ -5,7 +5,7 @@ export default function About() {
         color: 'red',
         backgroundColor: 'black' 
     }
-    return (
+    return ( 
         <>
         <div className='container' style={myStyle}>
             <h1 className="heading my-4">

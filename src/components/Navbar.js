@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // import About from './components/About';
 
 export default function Navbar(props) {
-  return (
+  return ( 
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">{props.title}</Link>
