@@ -48,17 +48,17 @@ export default function TextForm(props) {
             <div className="my-3">
                 <textarea className="form-control" style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}} id="myBox" value={text} rows="8" onChange={handleOnChange}></textarea>
             </div>
-            <button className="btn btn-primary my-3" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary my-3 mx-3" onClick={handleLoClick}>Convert to Lowercase</button>
-            <button className="btn btn-primary my-3 " onClick={handleExtraSpaces}>Remove Extra Spaces</button>
-            <button className="btn btn-success my-3 mx-3" onClick={handleOnCopy}>Copy to ClipBoard</button>
-            <button className="btn btn-danger my-3" onClick={handleClearClick}  >Clear above Text</button>
+            <button className="btn btn-primary my-2 mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-primary my-2 mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
+            <button className="btn btn-primary my-2 mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+            <button className="btn btn-success my-2 mx-1" onClick={handleOnCopy}>Copy to ClipBoard</button>
+            <button className="btn btn-danger my-2 mx-1" onClick={handleClearClick}  >Clear above Text</button>
 
         </div>
 
         <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
             <h2>Your Summary-</h2>
-            <p className='para'> words {text.split(" ").length} and {text.length} characters </p>
+            <p className='para'> words {text.split(" ").filter((element)=>{return element.length!==0}).length} and {text.length} characters </p>
         </div>
         </>
     )
