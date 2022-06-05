@@ -1,4 +1,7 @@
 .para{
   font-size: 1.5rem;
 }
+.accordion-button::after {
+  filter: invert(1);
+}
 

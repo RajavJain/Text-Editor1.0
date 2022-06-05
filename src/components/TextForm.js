@@ -26,15 +26,15 @@ export default function TextForm(props) {
     }
     const handleOnCopy=()=>{
         // console.log("I am Copy Button");
-        var copyText=document.getElementById("myBox");
+        // var copyText=document.getElementById("myBox");
         // console.log(text);
-        copyText.select();
-        navigator.clipboard.writeText(copyText.value);
+        // copyText.select();
+        navigator.clipboard.writeText(text);
         props.showAlert("Text has been copied Successfully","success");
         // alert("Successfully Copied!!");
     }
     const handleExtraSpaces=()=>{
-        console.log("i am ecxtra spaces remover");
+        // console.log("i am extra spaces remover");
         var newText=text.split(/[ ]+/);
         setText(newText.join(" "));
         props.showAlert("Extra Spaces has been removed Successfully","success");
@@ -58,8 +58,8 @@ export default function TextForm(props) {
 
         <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
             <h2>Your Summary-</h2>
-            <p className='para'> words {text.split(" ").filter((element)=>{return element.length!==0}).length} and {text.length} characters </p>
-        </div>
+            <p className='para'> words {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} and {text.length} characters </p>
+        </div> 
         </>
     )
 }
