@@ -63,9 +63,8 @@ function App() {
         </div>
 
       </Router>}
-
-      
-
+          {/* Was used in older version of react
+          Instead of Routes  */}
         {/* <div className="container my-3">
         <Switch>
           <Route path="/about">
