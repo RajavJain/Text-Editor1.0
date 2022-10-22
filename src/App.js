@@ -5,7 +5,7 @@ import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
 
-import { useState } from 'react';
+import { useState } from 'react'; 
 
 import {
   BrowserRouter as Router,
@@ -50,7 +50,8 @@ function App() {
   return (
     <>
     {<Router>
-      <Navbar title="Text-Utils" about="About Us" mode={mode} toggleMode={toggleMode} />
+
+      <Navbar title="Text-Utils" about="About Us" mode={mode} toggleMode={toggleMode} /> {/* Isme mode and toggleMode prop m send kiya hai */}
       <Alert alert={alert}/>
       
       <div className="container my-3">

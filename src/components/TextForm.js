@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 
 export default function TextForm(props) {
 
+
+    const [text, setText] = useState('')// isme state ko set kr diya hai initially as null and ek setText naam ka function bna diya hai and then hum usko update kr rhe hai.....takki hame baar baar change na krna pade har button ke liye.
+
     const handleUpClick = () => {
-        console.log("Button was Clicked");
+        // console.log("Button was Clicked");
         let newText = text.toUpperCase();
         setText(newText);
         props.showAlert("Text has been successfully converted to UpperCase", "success")
@@ -15,10 +18,16 @@ export default function TextForm(props) {
         props.showAlert("Text has been successfully converted to LowerCase", "success")
     }
     const handleClearClick = () => {
-        // alert("Do you Really want to clear the Text?")
-        setText("");
-        props.showAlert("Text has been cleared Successfully", "success");
-
+        //more optimization due to the window.confirm command
+        let isExecuted = window.confirm("Are you sure to execute this action?");
+        if(isExecuted===true)
+        {
+            setText("");
+            props.showAlert("Text has been cleared Successfully", "success");
+        }
+        else{
+            setText(text);
+        }
     }
     const handleOnChange = (event) => {
         console.log("Onchange");
@@ -31,7 +40,6 @@ export default function TextForm(props) {
         // copyText.select();
         navigator.clipboard.writeText(text);
         props.showAlert("Text has been copied Successfully", "success");
-        // alert("Successfully Copied!!");
     }
     const handleExtraSpaces = () => {
         // console.log("i am extra spaces remover");
@@ -39,8 +47,6 @@ export default function TextForm(props) {
         setText(newText.join(" "));
         props.showAlert("Extra Spaces has been removed Successfully", "success");
     }
-    const [text, setText] = useState('')
-
     return (
         <>
             <div className='container' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>

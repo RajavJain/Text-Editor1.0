@@ -7,6 +7,7 @@ export default function Navbar(props) {
   return (
     <>
       <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">{props.title}</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,12 +36,14 @@ export default function Navbar(props) {
     </>
   )
 }
+// ye default mai dene ke sliye hai.... agar kisi ne galat prop paas kr diya to...
 
 // Navbar.propTypes = {
 //   title: PropTypes.string,
 //   about: PropTypes.string
 // };
 
+// ye jab istmaal hoga jab hum props mai kuch bhi na bheje
 
 // Navbar.defaultProps = {
 //   title: 'Set your Title here',
