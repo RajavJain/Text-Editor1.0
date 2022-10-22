@@ -4,24 +4,20 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import About from './components/About';
-
 import { useState } from 'react'; 
-
 import {
   BrowserRouter as Router,
   Routes, 
   Route,
 } from "react-router-dom";
 
-// import About from './components/About';
-
 
 function App() {
 
+  //used useState for changing the functions
   const [mode, setMode] = useState('light');
-
   const [alert, setAlert] = useState(null);
-
+  
   const showAlert=(message,type)=>{
      setAlert({
       msg:message,
@@ -29,8 +25,9 @@ function App() {
      })
      setTimeout(() => {
        setAlert(null);
-     }, 2000);
+     }, 2500);
   } 
+
 
   const toggleMode = () => {
     if (mode === 'dark')
@@ -39,7 +36,6 @@ function App() {
       document.body.style.backgroundColor='white';
       showAlert("Light Mode has been Enabled","success");
     }
-      
     else {
     setMode('dark');
     document.body.style.backgroundColor='#101054';
@@ -47,11 +43,14 @@ function App() {
     }
 }
 
+
   return (
     <>
+
     {<Router>
 
       <Navbar title="Text-Utils" about="About Us" mode={mode} toggleMode={toggleMode} /> {/* Isme mode and toggleMode prop m send kiya hai */}
+
       <Alert alert={alert}/>
       
       <div className="container my-3">
@@ -64,6 +63,9 @@ function App() {
         </div>
 
       </Router>}
+
+
+      
           {/* Was used in older version of react
           Instead of Routes  */}
         {/* <div className="container my-3">

@@ -5,9 +5,6 @@ export default function About(props) {
         color: props.mode === 'dark' ? 'white' : '#212529',
         backgroundColor: props.mode === 'dark' ? '#212529' : 'white',
     }
-    // const [myStyle, setMyStyle] = useState({
-
-    // })
     return (
         <>
             <div className='container' >
@@ -15,6 +12,7 @@ export default function About(props) {
                     About Us
                 </h1>
                 <div className="accordion" id="accordionPanelsStayOpenExample" style={myStyle}>
+
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                             <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" style={myStyle}>
@@ -27,6 +25,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
+
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="panelsStayOpen-headingTwo" style={myStyle}>
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" style={myStyle}>
@@ -39,6 +38,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
+
                     <div className="accordion-item" style={myStyle}>
                         <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                             <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" style={myStyle}>
@@ -51,9 +51,7 @@ export default function About(props) {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="container my-3">
-                    {/* <button type="button" className="btn btn-secondary">Enable Dark Mode</button> */}
+
                 </div>
             </div>
         </>
